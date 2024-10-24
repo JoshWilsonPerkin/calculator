@@ -1,0 +1,68 @@
+* {
+	text-align: center;
+	margin: auto;
+	padding: 5px;
+	font-size: 30px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 428px;
+	height: 926px;
+	background-color: black;
+	color: white;
+}
+
+button {
+	height: 90px;
+	width: 90px;
+	border: 0px;
+	border-radius: 45px;
+	font-weight: 300;
+	color: white;
+	background-color: #383838;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+button:hover {
+	opacity: 0.7;
+	transition: 0.3s;
+}
+
+.zero {
+	width: 193px;
+}
+
+.clear,
+.plusMinus,
+.percentage {
+	color: black;
+	background-color: silver;
+}
+
+.divide,
+.multiply,
+.subtract,
+.add,
+.equal {
+	background-color: darkorange;
+	font-size: 36px;
+}
+
+.buttons {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 3;
+}
+
+.screen {
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	width: 380px;
+	font-size: 72px;
+	color: white;
+}
