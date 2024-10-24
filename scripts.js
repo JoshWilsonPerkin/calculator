@@ -10,10 +10,10 @@ screen.textContent = '0';
 
 function assignPreviousString() { previousString = screen.textContent };
 function assignCurrentString() { currentString = screen.textContent };
-function divideNums() { screen.textContent = (Number(previousString) / Number(currentString)).toFixed(8) };
-function multiplyNums() { screen.textContent = (Number(previousString) * Number(currentString)).toFixed(8) };
-function subtractNums() { screen.textContent = (Number(previousString) - Number(currentString)).toFixed(8) };
-function addNums() { screen.textContent = (Number(previousString) + Number(currentString)).toFixed(8) };
+function divideNums() { screen.textContent = (Number(previousString) / Number(currentString)).toString().substring(0,11) };
+function multiplyNums() { screen.textContent = (Number(previousString) * Number(currentString)).toString().substring(0, 11) };
+function subtractNums() { screen.textContent = (Number(previousString) - Number(currentString)).toString().substring(0,11) };
+function addNums() { screen.textContent = (Number(previousString) + Number(currentString)).toString().substring(0, 11)};
 
 const clearButton = document.querySelector(".clear");
 clearButton.addEventListener('click', function clearScreen() {
