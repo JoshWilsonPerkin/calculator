@@ -35,57 +35,149 @@ percentageButton.addEventListener('click', function percentage() { screen.textCo
 const divideButton = document.querySelector(".divide");
 divideButton.addEventListener('click', function divide() {
 	divideIt = true;
-	if (previousString === '') {
-		assignPreviousString();
-		screen.textContent = '0';
+
+	if ((addIt === true) || (subtractIt === true) || (multiplyIt === true)) {
+		if (addIt === true) {
+			assignCurrentString();
+			previousString = Number(previousString) + Number(currentString);
+			screen.textContent = previousString;
+			addIt = false;
+		}
+		else if (subtractIt === true) {
+			assignCurrentString();
+			previousString = Number(previousString) - Number(currentString);
+			screen.textContent = previousString;
+			subtractIt = false;
+		}
+		else {
+			assignCurrentString();
+			previousString = Number(previousString) * Number(currentString);
+			screen.textContent = previousString;
+			multiplyIt = false;
+		}
 	}
 	else {
-		assignCurrentString();
-		previousString = Number(previousString) / Number(currentString);
-		screen.textContent = previousString;
+		if (previousString === '') {
+			assignPreviousString();
+			screen.textContent = '0';
+		}
+		else {
+			assignCurrentString();
+			previousString = Number(previousString) / Number(currentString);
+			screen.textContent = previousString;
+		}
 	}
 });
 
 const multiplyButton = document.querySelector(".multiply");
 multiplyButton.addEventListener('click', function multiply() {
 	multiplyIt = true;
-	if (previousString === '') {
-		assignPreviousString();
-		screen.textContent = '0';
+
+	if ((addIt === true) || (subtractIt === true) || (divideIt === true)) {
+		if (addIt === true) {
+			assignCurrentString();
+			previousString = Number(previousString) + Number(currentString);
+			screen.textContent = previousString;
+			addIt = false;
+		}
+		else if (subtractIt === true) {
+			assignCurrentString();
+			previousString = Number(previousString) - Number(currentString);
+			screen.textContent = previousString;
+			subtractIt = false;
+		}
+		else {
+			assignCurrentString();
+			previousString = Number(previousString) / Number(currentString);
+			screen.textContent = previousString;
+			divideIt = false;
+		}
 	}
 	else {
-		assignCurrentString();
-		previousString = Number(previousString) * Number(currentString);
-		screen.textContent = previousString;
+
+		if (previousString === '') {
+			assignPreviousString();
+			screen.textContent = '0';
+		}
+		else {
+			assignCurrentString();
+			previousString = Number(previousString) * Number(currentString);
+			screen.textContent = previousString;
+		}
 	}
 });
 
 const subtractButton = document.querySelector(".subtract");
 subtractButton.addEventListener('click', function subtract() {
 	subtractIt = true;
-	
-	if (previousString === '') {
-		assignPreviousString();
-		screen.textContent = '0';
+
+	if ((addIt === true) || (divideIt === true) || (multiplyIt === true)) {
+		if (addIt === true) {
+			assignCurrentString();
+			previousString = Number(previousString) + Number(currentString);
+			screen.textContent = previousString;
+			addIt = false;
+		}
+		else if (divideIt === true) {
+			assignCurrentString();
+			previousString = Number(previousString) / Number(currentString);
+			screen.textContent = previousString;
+			divideIt = false;
+		}
+		else {
+			assignCurrentString();
+			previousString = Number(previousString) * Number(currentString);
+			screen.textContent = previousString;
+			multiplyIt = false;
+		}
 	}
 	else {
-		assignCurrentString();
-		previousString = Number(previousString) - Number(currentString);
-		screen.textContent = previousString;
+		if (previousString === '') {
+			assignPreviousString();
+			screen.textContent = '0';
+		}
+		else {
+			assignCurrentString();
+			previousString = Number(previousString) - Number(currentString);
+			screen.textContent = previousString;
+		}
 	}
 });
 
 const addButton = document.querySelector(".add");
 addButton.addEventListener('click', function add() {
 	addIt = true;
-	if (previousString === '') {
-		assignPreviousString();
-		screen.textContent = '0';
+
+	if ((subtractIt === true) || (divideIt === true) || (multiplyIt === true)) {
+		if (subtractIt === true) {
+			assignCurrentString();
+			previousString = Number(previousString) - Number(currentString);
+			screen.textContent = previousString;
+			subtractIt = false;
+		}
+		else if (divideIt === true) {
+			assignCurrentString();
+			previousString = Number(previousString) / Number(currentString);
+			screen.textContent = previousString;
+			divideIt = false;
+		}
+		else {
+			assignCurrentString();
+			previousString = Number(previousString) * Number(currentString);
+			screen.textContent = previousString;
+			multiplyIt = false;
+		}
 	}
 	else {
-		assignCurrentString();
-		previousString = Number(previousString) + Number(currentString);
-		screen.textContent = previousString;
+		if (previousString === '') {
+			assignPreviousString();
+			screen.textContent = '0';
+		}
+		else {
+			assignCurrentString();
+			previousString = Number(previousString) + Number(currentString);
+			screen.textContent = previousString;
+		}
 	}
 });
 
@@ -172,7 +264,7 @@ one.addEventListener('click', function one() {
 
 const zero = document.querySelector(".zero");
 zero.addEventListener('click', function zero() {
-	if ((screen.textContent === '0') || (currentString !== '')) { screen.textContent = '' }
+	if ((screen.textContent === '0') && (currentString !== '')) { screen.textContent = '' }
 	screen.textContent += '0';
 });
 
